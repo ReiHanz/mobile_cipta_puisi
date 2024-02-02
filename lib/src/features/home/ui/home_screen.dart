@@ -5,6 +5,13 @@ class HomeScreen extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    return Container();
+    Size size = MediaQuery.of(context).size;
+    return Scaffold(
+      body: Container(
+        width: size.width,
+        height: size.height,
+        decoration: gradientBoxDecoration,
+      ),
+    );
   }
 }
