@@ -7,6 +7,7 @@ class ConfigTheme {
     elevatedButtonTheme: ElevatedButtonThemeData(
       style: elevatedButtonStyle,
     ),
+    inputDecorationTheme: inputDecorationTheme,
   );
 
   static final ThemeData themeDark = ThemeData(
@@ -15,12 +16,13 @@ class ConfigTheme {
     elevatedButtonTheme: ElevatedButtonThemeData(
       style: elevatedButtonStyle,
     ),
+    inputDecorationTheme: inputDecorationTheme,
   );
 
-  // elevated button style
+  /// elevated button style
   static final ButtonStyle elevatedButtonStyle = ButtonStyle(
     padding: MaterialStateProperty.all<EdgeInsetsGeometry>(
-      const EdgeInsets.all(16.0),
+      const EdgeInsets.all(20.0),
     ),
     backgroundColor: MaterialStateProperty.all<Color>(
       _colorSchemeLight.primary,
@@ -33,6 +35,59 @@ class ConfigTheme {
         borderRadius: BorderRadius.circular(8),
       ),
     ),
+    textStyle: MaterialStateProperty.all<TextStyle>(
+      const TextStyle(
+        fontSize: 20.0,
+        fontWeight: FontWeight.bold,
+      ),
+    ),
+  );
+
+  /// textfield style
+  /// width outline border
+  static const double _widthOutlineBorder = 3.0;
+  static final InputDecorationTheme inputDecorationTheme = InputDecorationTheme(
+    hintStyle: TextStyle(
+      color: _colorSchemeLight.onBackground,
+    ),
+    contentPadding: const EdgeInsets.all(20.0),
+    border: OutlineInputBorder(
+      borderSide: BorderSide(
+        width: _widthOutlineBorder,
+        color: _colorSchemeLight.onBackground,
+      ),
+      borderRadius: BorderRadius.circular(10.0),
+    ),
+    enabledBorder: OutlineInputBorder(
+      borderSide: BorderSide(
+        width: _widthOutlineBorder,
+        color: _colorSchemeLight.onBackground,
+      ),
+      borderRadius: BorderRadius.circular(10.0),
+    ),
+    focusedBorder: OutlineInputBorder(
+      borderSide: BorderSide(
+        width: _widthOutlineBorder,
+        color: _colorSchemeLight.onBackground,
+      ),
+      borderRadius: BorderRadius.circular(10.0),
+    ),
+    errorBorder: OutlineInputBorder(
+      borderSide: BorderSide(
+        width: _widthOutlineBorder,
+        color: _colorSchemeLight.onError,
+      ),
+      borderRadius: BorderRadius.circular(10.0),
+    ),
+    focusedErrorBorder: OutlineInputBorder(
+      borderSide: BorderSide(
+        width: _widthOutlineBorder,
+        color: _colorSchemeLight.onError,
+      ),
+      borderRadius: BorderRadius.circular(10.0),
+    ),
+    fillColor: _colorSchemeLight.background,
+    filled: true,
   );
 
   static const ColorScheme _colorSchemeLight = ColorScheme(

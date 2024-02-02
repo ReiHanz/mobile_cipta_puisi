@@ -38,7 +38,10 @@ class OnBoardingScreen extends StatelessWidget {
               SizedBox(
                 width: size.width * 0.8,
                 child: ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.pushNamedAndRemoveUntil(
+                        context, "/login", (route) => false);
+                  },
                   child: const Text("Explore Poems"),
                 ),
               ),
