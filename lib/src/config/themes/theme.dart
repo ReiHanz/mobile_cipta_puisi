@@ -2,16 +2,42 @@ import 'package:flutter/material.dart';
 
 class ConfigTheme {
   static final ThemeData themeLight = ThemeData(
+    fontFamily: "Balsamic",
     colorScheme: _colorSchemeLight,
+    elevatedButtonTheme: ElevatedButtonThemeData(
+      style: elevatedButtonStyle,
+    ),
   );
 
   static final ThemeData themeDark = ThemeData(
+    fontFamily: "Balsamic",
     colorScheme: _colorsSchemeDark,
+    elevatedButtonTheme: ElevatedButtonThemeData(
+      style: elevatedButtonStyle,
+    ),
+  );
+
+  // elevated button style
+  static final ButtonStyle elevatedButtonStyle = ButtonStyle(
+    padding: MaterialStateProperty.all<EdgeInsetsGeometry>(
+      const EdgeInsets.all(16.0),
+    ),
+    backgroundColor: MaterialStateProperty.all<Color>(
+      _colorSchemeLight.primary,
+    ),
+    foregroundColor: MaterialStateProperty.all<Color>(
+      _colorSchemeLight.onPrimary,
+    ),
+    shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+      RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(8),
+      ),
+    ),
   );
 
   static const ColorScheme _colorSchemeLight = ColorScheme(
     brightness: Brightness.light,
-    primary: Color(0xff006684),
+    primary: Color(0xffF09F29),
     onPrimary: Color(0xffffffff),
     primaryContainer: Color(0xffbde9ff),
     onPrimaryContainer: Color(0xff001f2a),
@@ -45,7 +71,7 @@ class ConfigTheme {
 
   static const ColorScheme _colorsSchemeDark = ColorScheme(
     brightness: Brightness.dark,
-    primary: Color(0xff66d3ff),
+    primary: Color(0xffF09F29),
     onPrimary: Color(0xff003546),
     primaryContainer: Color(0xff004d64),
     onPrimaryContainer: Color(0xffbde9ff),
