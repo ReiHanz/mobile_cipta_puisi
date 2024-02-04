@@ -34,7 +34,7 @@ class _SplashScreenState extends ConsumerState<SplashScreen> {
             ),
             const Spacer(),
             Text(
-              "versi 1.0.0",
+              "versi ${ConstantApp.version}",
               style: Theme.of(context)
                   .textTheme
                   .bodySmall!

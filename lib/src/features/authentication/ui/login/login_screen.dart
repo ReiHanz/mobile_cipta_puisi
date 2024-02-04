@@ -103,7 +103,10 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
                       child: ElevatedButton(
                         child: const Text("Login"),
                         onPressed: () {
-                          if (_formKey.currentState!.validate()) {}
+                          if (_formKey.currentState!.validate()) {
+                            Navigator.pushNamedAndRemoveUntil(
+                                context, "/", (route) => false);
+                          }
                         },
                       ),
                     ),
@@ -125,8 +128,7 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
                         const SizedBox(width: 10.0),
                         GestureDetector(
                           onTap: () {
-                            Navigator.pushNamedAndRemoveUntil(
-                                context, "/register", (route) => false);
+                            Navigator.pushNamed(context, "/register");
                           },
                           child: Text("Register",
                               style: Theme.of(context)
@@ -143,7 +145,12 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
                     ),
                     const SizedBox(height: 10.0),
                     GestureDetector(
-                      onTap: () {},
+                      onTap: () {
+                        showDialog(
+                          context: context,
+                          builder: (_) => const DialogPetunjukPenggunaan(),
+                        );
+                      },
                       child: Text(
                         "Petunjuk Penggunaan",
                         style: Theme.of(context).textTheme.bodyLarge!.copyWith(
